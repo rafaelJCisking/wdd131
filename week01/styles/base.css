@@ -1,0 +1,183 @@
+/* =========================================================
+   1. VARIABLES GLOBALES (Colores suaves y consistentes)
+   ========================================================= */
+:root {
+  --color-header:   #1f5c85;
+  --color-header-d: #174666; /* Un poco más oscuro para el footer */
+  --color-nav:      #1f2933;
+  --color-border:   #d1d9e0;
+  --color-bg:       #f4f7f9; /* Fondo muy suave y tranquilo */
+  --color-surface:  #ffffff;
+  --color-text:     #2b2b2b;
+  
+  --radius-md: 8px;
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-3d:   0 8px 20px rgba(0, 0, 0, 0.12); /* Efecto sutil de elevación */
+  
+  --font-main: 'Roboto', system-ui, -apple-system, sans-serif;
+}
+
+/* =========================================================
+   2. RESET BÁSICO
+   ========================================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+  
+  /* Flexbox para asegurar que el footer siempre esté abajo */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* =========================================================
+   3. HEADER
+   ========================================================= */
+header {
+  background-color: var(--color-header);
+  color: #ffffff;
+  text-align: center;
+  padding: 1.5rem 1rem 0;
+}
+
+header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* =========================================================
+   4. NAV — ✅ Requisito de auditoría: display flex
+   ========================================================= */
+nav {
+  background-color: var(--color-nav);
+}
+
+nav ul {
+  display: flex;                 /* ✅ REQUISITO: display flex */
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0.75rem 1rem;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+/* ✅ Requisito de auditoría: :hover pseudoclass */
+nav a:hover,
+nav a:focus {
+  color: #a3c9e8;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* =========================================================
+   5. MAIN — ✅ Requisito de auditoría: display grid
+   ========================================================= */
+main {
+  max-width: 900px;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  
+  display: grid;                 /* ✅ REQUISITO: display grid */
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  
+  /* Empuja el footer hacia abajo si hay poco contenido */
+  flex: 1; 
+}
+
+main > h1 {
+  grid-column: 1 / -1; /* El título ocupa todo el ancho del grid */
+  text-align: center;
+  color: var(--color-header);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* =========================================================
+   6. TARJETAS (Cards) con efecto 3D sutil
+   ========================================================= */
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+  
+  /* Transición suave para el efecto de elevación */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto 3D suave al pasar el mouse (sin ser agresivo) */
+.card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: var(--shadow-3d);
+}
+
+.card h2 {
+  color: var(--color-header);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  margin-bottom: 1rem;
+  border: 1px solid var(--color-border);
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #4a5568;
+}
+
+/* =========================================================
+   7. FOOTER
+   ========================================================= */
+footer {
+  background-color: var(--color-header-d);
+  color: #ffffff;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  margin-top: auto; /* Refuerzo para mantenerlo al final */
+}
+
+footer p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+/* =========================================================
+   8. RESPONSIVE (Para móviles)
+   ========================================================= */
+@media (max-width: 650px) {
+  main {
+    grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+  }
+  
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+}
