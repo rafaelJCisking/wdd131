@@ -1,0 +1,103 @@
+:root {
+  --color-header: #1f5c85;
+  --color-nav: #1f2933;
+  --color-border: #cbd2d9;
+  --color-text: #2b2b2b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--color-text);
+
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto auto 1fr auto;
+  grid-template-areas:
+    "header  header"
+    "nav     nav"
+    "title   title"
+    "content1 content2"
+    "footer  footer";
+  min-height: 100vh;
+}
+
+header {
+  grid-area: header;
+  background-color: var(--color-header);
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+header p {
+  margin: 0;
+}
+
+nav {
+  grid-area: nav;
+  background-color: var(--color-nav);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover,
+nav a:focus {
+  text-decoration: underline;
+}
+
+h1 {
+  grid-area: title;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.content-1 {
+  grid-area: content1;
+}
+
+.content-2 {
+  grid-area: content2;
+}
+
+main section {
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  margin: 0 1rem 1rem;
+  padding: 1rem;
+}
+
+main h2 {
+  background-color: var(--color-header);
+  color: #fff;
+  margin: -1rem -1rem 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 4px 4px 0 0;
+  text-align: center;
+}
+
+footer {
+  grid-area: footer;
+  background-color: var(--color-header);
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
