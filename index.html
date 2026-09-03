@@ -1,63 +1,106 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- Título requerido por la auditoría -->
     <title>WDD 131 - Dynamic Web Fundamentals - Rafael Valdes</title>
-    
+
     <!-- Meta descripción (optimizada para SEO y auditoría) -->
-    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals. Rafael Valdes. Portfolio showcasing responsive web design, HTML, CSS, and JavaScript projects.">
-    
+    <meta
+      name="description"
+      content="WDD 131 - Dynamic Web Fundamentals. Rafael Valdes. Portfolio showcasing responsive web design, HTML, CSS, and JavaScript projects."
+    />
+
     <!-- Meta autor -->
-    <meta name="author" content="Rafael Valdes">
-    
+    <meta name="author" content="Rafael Valdes" />
+
     <!-- Google Fonts (Requerido por la auditoría) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Enlace al CSS externo (Ruta exacta requerida) -->
-    <link rel="stylesheet" href="styles/base.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles/base.css" />
+
+    <script src="scripts/getdates.js" defer></script>
+  </head>
+  <body>
     <header>
-        <h2><span id="course-title">WDD 131 - Dynamic Web Fundamentals</span></h2>
-        <nav>
-            <ul>
-                <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-                <li><a href="https://byupw.instructure.com/" target="_blank" rel="noopener noreferrer">Canvas</a></li>
-                <li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=eng&id=p7#p7" target="_blank" rel="noopener noreferrer">Favorite Scripture</a></li>
-                <li><a href="final-project/">Final Project</a></li>
-            </ul>
-        </nav>
+      <h2><span id="course-title">WDD 131 - Dynamic Web Fundamentals</span></h2>
+      <nav>
+        <ul>
+          <li>
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://byupw.instructure.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Canvas</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=eng&id=p7#p7"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Favorite Scripture</a
+            >
+          </li>
+          <li><a href="final-project/">Final Project</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <h1>Rafael Valdes</h1>
-        
-        <section class="card">
-            <h2>Web Development Journey</h2>
-            <!-- RECUERDA: Cambia 'profile.jpg' por el nombre real de tu imagen en la carpeta images -->
-            <img src="images/profile.jpg" alt="Rafael Valdes working on web development" width="400" height="300" loading="lazy">
-            <p>Learning the fundamentals of building responsive and dynamic web pages using modern frontend technologies.</p>
-        </section>
+      <h1>Rafael Valdes</h1>
 
-        <section class="card">
-            <h2>My Projects</h2>
-            <img src="images/profile1.jpg" alt="Screenshot of web development projects" width="400" height="300" loading="lazy">
-            <p>A collection of weekly assignments and personal projects demonstrating my growing skills in web development.</p>
-        </section>
+      <section class="card">
+        <h2>Web Development Journey</h2>
+        <!-- RECUERDA: Cambia 'profile.jpg' por el nombre real de tu imagen en la carpeta images -->
+        <img
+          src="images/profile.jpg"
+          alt="Rafael Valdes working on web development"
+          width="400"
+          height="300"
+          loading="lazy"
+        />
+        <p>
+          Learning the fundamentals of building responsive and dynamic web pages
+          using modern frontend technologies.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>My Projects</h2>
+        <img
+          src="images/profile1.jpg"
+          alt="Screenshot of web development projects"
+          width="400"
+          height="300"
+          loading="lazy"
+        />
+        <p>
+          A collection of weekly assignments and personal projects demonstrating
+          my growing skills in web development.
+        </p>
+      </section>
     </main>
 
     <footer>
-        <p>&copy; <span id="currentyear"></span> Rafael Valdes, Chile</p>
-        <p id="lastModified"></p>
+      <p>&copy; <span id="currentyear"></span> Rafael Valdes, Chile</p>
+      <p id="lastModified"></p>
     </footer>
-
-    <!-- Enlace al JS externo con el nombre exacto que pide la auditoría -->
-    <script src="scripts/getdates.js" defer></script>
-
-</body>
+  </body>
 </html>
