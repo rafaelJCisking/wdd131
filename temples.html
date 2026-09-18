@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Album</title>
+    
+    <!-- CSS files linked in proper order for mobile-first development -->
+    <!-- Base/mobile styles are loaded first, followed by larger screen overrides -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="largescreen.css">
+    
+    <!-- Deferred JavaScript file -->
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Temple Album</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#old">Old</a></li>
+                <li><a href="#new">New</a></li>
+                <li><a href="#large">Large</a></li>
+                <li><a href="#small">Small</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Temples of the World</h1>
+        
+        <!-- 9 Figure elements with a single placeholder image -->
+        <figure>
+            <img src="images/placeholder.jpg" alt="Salt Lake Temple">
+            <figcaption>Salt Lake Temple</figcaption>
+        </figure>
+        
+        <figure>
+            <img src="images/placeholder.jpg" alt="Washington D.C. Temple">
+            <figcaption>Washington D.C. Temple</figcaption>
+        </figure>
+        
+        <figure>
+            <img src="images/placeholder.jpg" alt="Laie Hawaii Temple">
+            <figcaption>Laie Hawaii Temple</figcaption>
+        </figure>
+        
+        <figure>
+            <img src="images/placeholder.jpg" alt="Mesa Arizona Temple">
+            <figcaption>Mesa Arizona Temple</figcaption>
+        </figure>
+        
+        <figure>
+            <img src="images/placeholder.jpg" alt="Idaho Falls Idaho Temple">
+            <figcaption>Idaho Falls Idaho Temple</figcaption>
+        </figure>
+        
+        <figure>
+            <img src="images/placeholder.jpg" alt="Cardston Alberta Temple">
+            <figcaption>Cardston Alberta Temple</figcaption>
+        </figure>
+        
+        <figure>
+            <img src="images/placeholder.jpg" alt="Bern Switzerland Temple">
+            <figcaption>Bern Switzerland Temple</figcaption>
+        </figure>
+        
+        <figure>
+            <img src="images/placeholder.jpg" alt="London England Temple">
+            <figcaption>London England Temple</figcaption>
+        </figure>
+        
+        <figure>
+            <img src="images/placeholder.jpg" alt="Hamilton New Zealand Temple">
+            <figcaption>Hamilton New Zealand Temple</figcaption>
+        </figure>
+    </main>
+
+    <footer>
+        <!-- Static Information -->
+        <p>&copy; 2026 Your Name | <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+        
+        <!-- Dynamic Information (Assuming your deferred scripts.js updates this span) -->
+        <p>Last Updated: <span id="lastModified"></span></p>
+    </footer>
+
+</body>
+</html>
