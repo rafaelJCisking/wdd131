@@ -38,7 +38,7 @@ header h2 {
     right: 1rem;
 }
 
-/* FIX: Explicitly applying Flexbox to the nav element */
+
 nav {
     display: flex;
     flex-direction: column;
@@ -53,7 +53,7 @@ nav ul {
     gap: 0.5rem;
     max-width: 300px;
     margin-top: 0.5rem;
-    display: none; /* Hidden by default on mobile until toggled */
+    display: none; 
 }
 
 nav ul.active {
@@ -72,7 +72,7 @@ nav a {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* FIX: Explicit :hover pseudo-class on navigation elements */
+
 nav a:hover {
     background-color: #d4a843;
     color: #1b2a4a;
@@ -84,7 +84,7 @@ main {
     margin: 0 auto;
     padding: 1.5rem 1rem;
     
-    /* FIX: Explicit CSS Grid on main element */
+    
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.25rem;
