@@ -1,102 +1,107 @@
-/* =========================================
-   temples.css (Mobile-First Base Styles)
-   ========================================= */
-
-/* 1. Import Google Fonts (Playfair Display for headings, Lato for body) */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap');
-
-/* 2. Base Reset & Typography */
-* {
+/* Base Reset */
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 body {
-    font-family: 'Lato', sans-serif;
-    background-color: #f9f9f9; /* Soft off-white background */
-    color: #333333;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f5f5f0;
+    color: #333;
     line-height: 1.6;
 }
 
-h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-    color: #2c3e50; /* Dark slate blue */
-}
-
-/* 3. Header Styles */
 header {
-    background-color: #2c3e50;
-    color: #ffffff;
-    padding: 1.5rem 1rem;
+    background-color: #1b2a4a;
+    color: #fff;
+    padding: 1rem;
     text-align: center;
+    position: relative;
 }
 
-header h1 {
-    color: #ffffff;
-    margin-bottom: 1rem;
+header h2 {
+    font-family: 'Merriweather', serif;
+    color: #d4a843;
+    margin-bottom: 0.5rem;
+}
+
+#hamburger {
+    display: block;
+    background: none;
+    border: none;
+    color: #fff;
     font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
 }
 
-/* 4. Navigation Styles (CSS Flexbox) */
+/* FIX: Explicitly applying Flexbox to the nav element */
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
 nav ul {
     display: flex;
-    flex-direction: column; /* Stacked vertically for mobile */
+    flex-direction: column;
     list-style: none;
-    padding: 0;
-    margin: 0 auto;
-    max-width: 400px;
     gap: 0.5rem;
+    max-width: 300px;
+    margin-top: 0.5rem;
+    display: none; /* Hidden by default on mobile until toggled */
+}
+
+nav ul.active {
+    display: flex;
 }
 
 nav a {
     display: block;
-    padding: 0.75rem 1rem;
-    color: #ffffff;
-    text-decoration: none;
-    background-color: #34495e;
+    padding: 0.65rem 1rem;
+    background-color: #263b66;
+    color: #fff;
     border-radius: 4px;
     text-align: center;
-    /* Smooth transition for hover effects */
-    transition: background-color 0.3s ease, transform 0.2s ease; 
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Navigation Hover Effect */
+/* FIX: Explicit :hover pseudo-class on navigation elements */
 nav a:hover {
-    background-color: #e67e22; /* Burnt orange accent */
-    color: #ffffff;
-    transform: translateY(-2px); /* Slight lift effect */
+    background-color: #d4a843;
+    color: #1b2a4a;
+    transform: scale(1.05);
 }
 
-/* 5. Main Content & Grid Layout */
 main {
-    max-width: 900px; /* Limited width */
-    margin: 2rem auto; /* Centered horizontally */
-    padding: 0 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
     
-    /* CSS Grid: 1 column for mobile */
+    /* FIX: Explicit CSS Grid on main element */
     display: grid;
-    grid-template-columns: 1fr; 
-    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
 }
 
-main > h1 {
+main h1 {
+    font-family: 'Merriweather', serif;
+    color: #1b2a4a;
     text-align: center;
-    margin-bottom: 1rem;
-    font-size: 2.25rem;
+    grid-column: 1 / -1;
 }
 
-/* 6. Figure & Image Styles */
 figure {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 6px;
     overflow: hidden;
-    transition: transform 0.3s ease;
-}
-
-figure:hover {
-    transform: translateY(-5px); /* Subtle lift on hover */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 figure img {
@@ -106,27 +111,21 @@ figure img {
 }
 
 figcaption {
-    padding: 1rem;
+    padding: 0.75rem;
     text-align: center;
-    font-weight: 700;
-    color: #2c3e50;
-    background-color: #ecf0f1;
+    font-weight: 600;
+    color: #1b2a4a;
+    background-color: #eae8e0;
 }
 
-/* 7. Footer Styles */
 footer {
-    background-color: #2c3e50;
-    color: #ffffff;
+    background-color: #1b2a4a;
+    color: #ccc;
     text-align: center;
     padding: 1.5rem 1rem;
     margin-top: 2rem;
 }
 
 footer a {
-    color: #e67e22;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
+    color: #d4a843;
 }

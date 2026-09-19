@@ -3,22 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- FIX: Added Meta Description (50-160 chars) -->
+    <meta name="description" content="Explore a beautiful album of temples from around the world, featuring images and details of sacred places.">
+    
+    <!-- FIX: Added Meta Author -->
+    <meta name="author" content="Rafael Valdes">
+    
     <title>Temple Album</title>
     
-    <!-- CSS files linked in proper order for mobile-first development -->
-    <!-- Base/mobile styles are loaded first, followed by larger screen overrides -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="largescreen.css">
+    <!-- FIX: Google Fonts API using link tags (NO @import) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     
-    <!-- Deferred JavaScript file -->
-    <script src="scripts.js" defer></script>
+    <!-- FIX: Corrected CSS file paths to styles/ folder -->
+    <link rel="stylesheet" href="styles/temples.css">
+    <link rel="stylesheet" href="styles/temples-large.css">
+    
+    <!-- FIX: Corrected JS file path to scripts/ folder -->
+    <script src="scripts/temples.js" defer></script>
 </head>
 <body>
 
     <header>
-        <h1>Temple Album</h1>
+        <!-- FIX: Changed to h2 so there is only ONE h1 in the entire document -->
+        <h2>Temple Album</h2>
+        
+        <button id="hamburger" aria-label="Toggle navigation menu">☰</button>
+        
         <nav>
-            <ul>
+            <ul id="navMenu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#old">Old</a></li>
                 <li><a href="#new">New</a></li>
@@ -29,60 +44,29 @@
     </header>
 
     <main>
+        <!-- FIX: This is the ONLY h1 element in the document, and it is inside main -->
         <h1>Temples of the World</h1>
         
-        <!-- 9 Figure elements with a single placeholder image -->
         <figure>
-            <img src="images/placeholder.jpg" alt="Salt Lake Temple">
+            <img src="images/placeholder2.jpg" alt="Ghana Temple">
             <figcaption>Salt Lake Temple</figcaption>
         </figure>
         
         <figure>
-            <img src="images/placeholder.jpg" alt="Washington D.C. Temple">
+            <img src="images/placeholder1.jpg" alt="Nigeria Temple">
             <figcaption>Washington D.C. Temple</figcaption>
         </figure>
-        
+      
         <figure>
-            <img src="images/placeholder.jpg" alt="Laie Hawaii Temple">
-            <figcaption>Laie Hawaii Temple</figcaption>
-        </figure>
-        
-        <figure>
-            <img src="images/placeholder.jpg" alt="Mesa Arizona Temple">
+            <img src="images/placeholder3.jpg" alt="Mesa Arizona Temple">
             <figcaption>Mesa Arizona Temple</figcaption>
-        </figure>
-        
-        <figure>
-            <img src="images/placeholder.jpg" alt="Idaho Falls Idaho Temple">
-            <figcaption>Idaho Falls Idaho Temple</figcaption>
-        </figure>
-        
-        <figure>
-            <img src="images/placeholder.jpg" alt="Cardston Alberta Temple">
-            <figcaption>Cardston Alberta Temple</figcaption>
-        </figure>
-        
-        <figure>
-            <img src="images/placeholder.jpg" alt="Bern Switzerland Temple">
-            <figcaption>Bern Switzerland Temple</figcaption>
-        </figure>
-        
-        <figure>
-            <img src="images/placeholder.jpg" alt="London England Temple">
-            <figcaption>London England Temple</figcaption>
-        </figure>
-        
-        <figure>
-            <img src="images/placeholder.jpg" alt="Hamilton New Zealand Temple">
-            <figcaption>Hamilton New Zealand Temple</figcaption>
         </figure>
     </main>
 
     <footer>
-        <!-- Static Information -->
-        <p>&copy; 2026 Your Name | <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-        
-        <!-- Dynamic Information (Assuming your deferred scripts.js updates this span) -->
+        <p>&copy; <span id="currentYear"></span> Rafael Valdes | 
+           <a href="mailto:rafaelvaldessalinas@gmail.com">rafaelvaldessalinas@gmail.com</a>
+        </p>
         <p>Last Updated: <span id="lastModified"></span></p>
     </footer>
 
