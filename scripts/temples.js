@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Footer Copyright Year
+    
     const currentYearSpan = document.getElementById('currentYear');
     if (currentYearSpan) {
         currentYearSpan.textContent = new Date().getFullYear();
     }
     
-    // 2. Last Modified Date
+    
     const lastModifiedSpan = document.getElementById('lastModified');
     if (lastModifiedSpan) {
         const lastModDate = new Date(document.lastModified);
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // 3. Hamburger Menu Toggle
+    
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu');
     
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         
-        // Close menu when a link is clicked
+        
         const navLinks = navMenu.querySelectorAll('a');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
