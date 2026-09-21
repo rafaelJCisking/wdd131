@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Discover the landscapes, climate, and culture of Chile."
+    />
+    <meta name="author" content="Rafael Valdes" />
+    <title>Chile | Place</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/place.css" />
+    <link rel="stylesheet" href="styles/place-large.css" />
+    <script src="scripts/place.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Chile</h1>
+    </header>
+
+    <main>
+      <section class="hero" aria-label="Chile landscape">
+        <picture>
+          <source
+            media="(min-width: 700px)"
+            srcset="
+              images/chile-landscape-small.webp  700w,
+              images/chile-landscape-large.webp 1200w
+            "
+            sizes="100vw"
+          />
+          <img
+            src="images/chile-landscape-small.webp"
+            srcset="
+              images/chile-landscape-small.webp  480w,
+              images/chile-landscape-large.webp 1200w
+            "
+            sizes="100vw"
+            alt="Landscape in Chile"
+          />
+        </picture>
+
+        <div class="hero-panels">
+          <article class="info-card">
+            <h2>About Chile</h2>
+            <p>
+              Chile stretches along the western edge of South America, from the
+              Atacama Desert in the north to the fjords and glaciers of
+              Patagonia.
+            </p>
+            <dl>
+              <div>
+                <dt>Capital</dt>
+                <dd>Santiago</dd>
+              </div>
+              <div>
+                <dt>Language</dt>
+                <dd>Spanish</dd>
+              </div>
+              <div>
+                <dt>Currency</dt>
+                <dd>Chilean peso</dd>
+              </div>
+            </dl>
+          </article>
+
+          <article class="info-card weather-card">
+            <h2>
+              <span class="weather-icon-wide" aria-hidden="true">⛅</span>
+              <img
+                class="weather-icon-mobile"
+                src="images/weather-partly-cloudy.svg"
+                alt=""
+                width="40"
+                height="40"
+              />
+              Weather
+            </h2>
+            <p id="weather-summary">
+              Temperatures vary widely across the country.
+            </p>
+            <dl>
+              <div>
+                <dt>Temperature</dt>
+                <dd id="temperature">18 °C</dd>
+              </div>
+              <div>
+                <dt>Conditions</dt>
+                <dd id="conditions">Clear skies</dd>
+              </div>
+              <div>
+                <dt>Wind</dt>
+                <dd id="wind">12 km/h</dd>
+              </div>
+              <div>
+                <dt>Wind chill</dt>
+                <dd id="wind-chill">Calculating...</dd>
+              </div>
+            </dl>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="currentYear"></span> Rafael Valdes | Chile</p>
+      <p>Last Updated: <span id="lastModified"></span></p>
+    </footer>
+  </body>
+</html>

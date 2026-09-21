@@ -1,0 +1,44 @@
+@media screen and (min-width: 700px) {
+  header {
+    padding: 1.75rem;
+  }
+  h1 {
+    font-size: 2.75rem;
+  }
+  .hero img {
+    height: 460px;
+  }
+  .hero-panels {
+    position: absolute;
+    inset: 0;
+    display: block;
+    padding: 2rem;
+    pointer-events: none;
+  }
+  .info-card {
+    width: min(360px, 38%);
+    pointer-events: auto;
+  }
+  .weather-card {
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
+  }
+  .hero-panels .info-card h2 {
+    margin-bottom: 0.75rem;
+  }
+  .hero .weather-icon-mobile {
+    display: none;
+  }
+  .weather-icon-wide {
+    display: inline;
+  }
+  .hero-panels .info-card p {
+    margin-top: 0;
+  }
+  .content-grid {
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem;
+    gap: 2rem;
+  }
+}

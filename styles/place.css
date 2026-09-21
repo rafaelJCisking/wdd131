@@ -1,0 +1,105 @@
+:root {
+  --ink: #19324a;
+  --paper: #f4f1e8;
+  --accent: #d56b3d;
+  --card: #fffdf7;
+  --heading: "Merriweather", serif;
+  --body: "Open Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: var(--body);
+  line-height: 1.6;
+}
+
+header,
+footer {
+  padding: 1.25rem;
+  color: white;
+  background: var(--ink);
+  text-align: center;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+}
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero {
+  position: relative;
+}
+
+.hero img {
+  display: block;
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.hero-panels {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.info-card {
+  padding: 1.25rem;
+  background: var(--card);
+  box-shadow: 0 3px 12px rgb(25 50 74 / 18%);
+  border-top: 5px solid var(--accent);
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.weather-icon-mobile {
+  width: 2.25rem;
+  height: 2.25rem;
+  vertical-align: middle;
+}
+
+.weather-icon-wide {
+  display: none;
+}
+
+dl {
+  margin: 1rem 0 0;
+}
+dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid #d9d3c5;
+  padding: 0.45rem 0;
+}
+dt {
+  font-weight: 600;
+}
+dd {
+  margin: 0;
+  text-align: right;
+}
+footer {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+footer p {
+  margin: 0.2rem 0;
+}
