@@ -1,97 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore a beautiful album of temples from around the world, featuring images and details of sacred places.">
-    <meta name="author" content="Rafael Valdes">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore a beautiful album of temples from around the world, featuring images and details of sacred places."
+    />
+    <meta name="author" content="Rafael Valdes" />
     <title>Temple Album</title>
     
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    
-    
-    <link rel="stylesheet" href="styles/temples.css">
-    <link rel="stylesheet" href="styles/temples-large.css">
-    
-    
-    <script src="scripts/temples.js" defer></script>
-</head>
-<body>
+    <link rel="canonical" href="https://www.yourdomain.com/temple-album.html" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles/temples.css" />
+    <link rel="stylesheet" href="styles/temples-large.css" />
+
+    <script src="scripts/temples.js" defer></script>
+  </head>
+  <body>
     <header>
-        <h2>Temple Album</h2>
-        <button id="hamburger" aria-label="Toggle navigation menu">☰</button>
-        <nav>
-            <ul id="navMenu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#old">Old</a></li>
-                <li><a href="#new">New</a></li>
-                <li><a href="#large">Large</a></li>
-                <li><a href="#small">Small</a></li>
-            </ul>
-        </nav>
+      <h1>Temple Album</h1>
+      <!-- Added aria-expanded and aria-controls for screen readers -->
+      <button id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">☰</button>
+      <nav>
+        <ul id="navMenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#old">Old</a></li>
+          <li><a href="#new">New</a></li>
+          <li><a href="#large">Large</a></li>
+          <li><a href="#small">Small</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        
-        <h1>Temples of the World</h1>
-        
-        
-        <figure>
-            <img src="images/placeholder1.jpg" alt="Concepcion Chile Temple">
-            <figcaption>Concepcion Chile Temple</figcaption>
-        </figure>
-        
-        <figure>
-            <img src="images/placeholder2.jpg" alt="Washington D.C. Temple">
-            <figcaption>Washington D.C. Temple</figcaption>
-        </figure>
-      
-        <figure>
-            <img src="images/placeholder3.jpg" alt="Mesa Arizona Temple">
-            <figcaption>Mesa Arizona Temple</figcaption>
-        </figure>
+      <h2>Temples of the World</h2>
 
+      <section id="old">
+        <h3>Old Temples</h3>
         <figure>
-            <img src="images/placeholder1.jpg" alt="Salt Lake Temple">
-            <figcaption>Salt Lake Temple</figcaption>
+          <img src="images/placeholder1.jpg" alt="Concepcion Chile Temple" loading="lazy" />
+          <figcaption>Concepcion Chile Temple</figcaption>
         </figure>
+        <figure>
+          <img src="images/placeholder2.jpg" alt="Washington D.C. Temple" loading="lazy" />
+          <figcaption>Washington D.C. Temple</figcaption>
+        </figure>
+        <figure>
+          <img src="images/placeholder3.jpg" alt="Mesa Arizona Temple" loading="lazy" />
+          <figcaption>Mesa Arizona Temple</figcaption>
+        </figure>
+      </section>
 
+      <section id="new">
+        <h3>New Temples</h3>
         <figure>
-            <img src="images/placeholder2.jpg" alt="Antofagasta Chile Temple">
-            <figcaption>Antofagasta Chile Temple</figcaption>
+          <img src="images/placeholder1.jpg" alt="Salt Lake Temple" loading="lazy" />
+          <figcaption>Salt Lake Temple</figcaption>
         </figure>
+        <figure>
+          <img src="images/placeholder2.jpg" alt="Antofagasta Chile Temple" loading="lazy" />
+          <figcaption>Antofagasta Chile Temple</figcaption>
+        </figure>
+        <figure>
+          <img src="images/placeholder3.jpg" alt="Santiago Chile Temple" loading="lazy" />
+          <figcaption>Santiago Chile Temple</figcaption>
+        </figure>
+      </section>
 
+      <section id="large">
+        <h3>Large Temples</h3>
         <figure>
-            <img src="images/placeholder3.jpg" alt="Santiago Chile Temple">
-            <figcaption>Santiago Chile Temple</figcaption>
+          <img src="images/profile11.jpg" alt="Laie Hawaii Temple" loading="lazy" />
+          <figcaption>Laie Hawaii Temple</figcaption>
         </figure>
+      </section>
 
+      <section id="small">
+        <h3>Small Temples</h3>
         <figure>
-            <img src="images/profile11.jpg" alt="Laie Hawaii Temple">
-            <figcaption>Laie Hawaii Temple</figcaption>
+          <img src="images/profile1.jpg" alt="London England Temple" loading="lazy" />
+          <figcaption>London England Temple</figcaption>
         </figure>
-
         <figure>
-            <img src="images/profile1.jpg" alt="London England Temple">
-            <figcaption>London England Temple</figcaption>
+          <img src="images/profile2.jpg" alt="Hamilton New Zealand Temple" loading="lazy" />
+          <figcaption>Hamilton New Zealand Temple</figcaption>
         </figure>
-
-        <figure>
-            <img src="images/profile2.jpg" alt="Hamilton New Zealand Temple">
-            <figcaption>Hamilton New Zealand Temple</figcaption>
-        </figure>
+      </section>
     </main>
 
     <footer>
-        <p>&copy; <span id="2026"></span> Rafael Valdes | 
-           <a href="mailto:rafaelvaldessalinas@gmail.com">rafaelvaldessalinas@gmail.com</a>
-        </p>
-        <p>Last Updated: <span id="lastModified"></span></p>
+      <p>
+        &copy; <span id="currentYear"></span> Rafael Valdes |
+        <a href="mailto:rafaelvaldessalinas@gmail.com">rafaelvaldessalinas@gmail.com</a>
+      </p>
+      <p>Last Updated: <span id="lastModified"></span></p>
     </footer>
-
-</body>
+  </body>
 </html>

@@ -1,36 +1,57 @@
-@media screen and (min-width: 600px) {
-    
-    #hamburger {
-        display: none;
-    }
+/* Target screens larger than 768px (Tablets & Desktops) */
+@media (min-width: 768px) {
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 
-    
-    nav ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 1.5rem;
-    }
+  h1 {
+    margin: 0;
+    padding: 0;
+  }
 
-    nav a {
-        background-color: transparent;
-        padding: 0.5rem 1rem;
-    }
+  /* Hide Hamburger on Desktop */
+  #hamburger {
+    display: none;
+  }
 
-    nav a:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-        transform: none; 
-    }
+  /* Show Navigation horizontally on Desktop */
+  #navMenu {
+    display: flex !important; /* Override mobile hidden state */
+    flex-direction: row;
+    gap: 1.5rem;
+    margin-top: 0;
+    width: auto;
+  }
 
-    
-    main {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+  #navMenu li {
+    margin-bottom: 0;
+  }
 
-@media screen and (min-width: 900px) {
-    
-    main {
-        grid-template-columns: repeat(3, 1fr);
-    }
+  #navMenu a {
+    min-height: auto;
+    background: transparent;
+    border: none;
+    padding: 8px 12px;
+  }
+  
+  #navMenu a:hover {
+    background-color: transparent;
+    color: var(--link-hover);
+    text-decoration: underline;
+  }
+
+  /* Grid layout for figures on desktop */
+  section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  section h3 {
+    grid-column: 1 / -1; /* Makes the section title span across all columns */
+  }
 }
