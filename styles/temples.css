@@ -120,6 +120,7 @@ header {
 /* =========================================
    4. Main Content & Images
    ========================================= */
+/* NOTE: There is ONLY ONE 'main' rule in this file. */
 main {
   max-width: 1200px;
   margin: 0 auto;
@@ -143,7 +144,6 @@ img {
   width: 100%;
   height: auto;
   display: block;
-  /* Ensures aspect ratio is maintained and images don't overflow */
 }
 
 figcaption {
