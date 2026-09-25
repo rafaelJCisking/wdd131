@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Prueba de Callbacks</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        button { padding: 10px 15px; margin: 5px; cursor: pointer; background-color: #0056b3; color: white; border: none; border-radius: 5px; }
+        button:hover { background-color: #004494; }
+    </style>
+</head>
+<body>
+    <h1>Prueba de Funciones Callback</h1>
+    <p>1. Presiona <strong>F12</strong> en tu teclado.</p>
+    <p>2. Ve a la pestaña que dice <strong>"Console"</strong> (Consola).</p>
+    <p>3. Haz clic en los botones de abajo y observa lo que sucede en la consola.</p>
+    
+    <button onclick="probarSuma()">Probar calculate(2, 3, displayResult)</button>
+    <br>
+    <button onclick="probarFetch()">Probar fetchData(processData)</button>
+
+    <script>
+        // --- PARTE 1: Callback sincrónico ---
+        function calculate(a, b, callback) {
+            callback(a + b);
+        }
+
+        function displayResult(result) {
+            console.log('The result is: ' + result);
+        }
+
+        function probarSuma() {
+            console.clear(); // Limpia la consola para que sea fácil de leer
+            console.log("👉 Ejecutando: calculate(2, 3, displayResult)");
+            calculate(2, 3, displayResult);
+        }
+
+        // --- PARTE 2: Callback asíncrono (simulado) ---
+        function fetchData(callback) {
+            console.log("⏳ Iniciando simulación de descarga de datos... (espera 2 segundos)");
+            setTimeout(() => {
+                callback('Data has been fetched');
+            }, 2000); // 2000 milisegundos = 2 segundos
+        }
+
+        function processData(data) {
+            console.log("✅ Data received:", data);
+        }
+
+        function probarFetch() {
+            console.clear();
+            fetchData(processData);
+        }
+    </script>
+</body>
+</html>

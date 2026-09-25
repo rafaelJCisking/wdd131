@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Review Form</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Product Review</h1>
+        <p>Share your experience to help others make informed choices.</p>
+    </header>
+
+    <main>
+        <!-- Form uses method="get" for GitHub Pages compatibility -->
+        <form method="get" action="review.html" id="review-form">
+
+            <!-- Product Name -->
+            <div class="form-group">
+                <label for="product">Product Name</label>
+                <select id="product" name="product" required>
+                    <option value="" disabled selected>Select a Product ...</option>
+                    <!-- Dynamic options inserted via JavaScript -->
+                </select>
+            </div>
+
+            <!-- Overall Rating -->
+            <div class="form-group">
+                <label id="rating-label">Overall Rating</label>
+                <div class="star-rating" role="radiogroup" aria-labelledby="rating-label">
+                    <!-- DOM is ordered 5 to 1 to allow the CSS row-reverse trick to highlight previous siblings -->
+                    <input type="radio" id="star5" name="rating" value="5" required>
+                    <label for="star5" title="5 stars">&#9733;</label>
+
+                    <input type="radio" id="star4" name="rating" value="4">
+                    <label for="star4" title="4 stars">&#9733;</label>
+
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label for="star3" title="3 stars">&#9733;</label>
+
+                    <input type="radio" id="star2" name="rating" value="2">
+                    <label for="star2" title="2 stars">&#9733;</label>
+
+                    <input type="radio" id="star1" name="rating" value="1">
+                    <label for="star1" title="1 star">&#9733;</label>
+                </div>
+            </div>
+
+            <!-- Date of Installation -->
+            <div class="form-group">
+                <label for="install-date">Date of Installation</label>
+                <input type="date" id="install-date" name="installDate" required>
+            </div>
+
+            <!-- Useful Features -->
+            <fieldset class="form-group">
+                <legend>Useful Features</legend>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="feat-durability" name="features" value="Durability">
+                        <label for="feat-durability">Durability</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="feat-ease" name="features" value="Ease of Use">
+                        <label for="feat-ease">Ease of Use</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="feat-design" name="features" value="Design">
+                        <label for="feat-design">Design</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="feat-performance" name="features" value="Performance">
+                        <label for="feat-performance">Performance</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Written Review -->
+            <div class="form-group">
+                <label for="review-text">Written Review <span class="optional">(Optional)</span></label>
+                <textarea id="review-text" name="reviewText" rows="5" placeholder="Share your thoughts on the product's performance, pros, and cons..."></textarea>
+            </div>
+
+            <!-- User Name -->
+            <div class="form-group">
+                <label for="username">User Name <span class="optional">(Optional)</span></label>
+                <input type="text" id="username" name="username" placeholder="e.g., JaneDoe99">
+            </div>
+
+            <!-- Form Submission Button -->
+            <div class="form-group">
+                <input type="submit" id="submit-btn" name="submit" value="Submit Review">
+            </div>
+
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Web Development Class &mdash; Assignment Submission</p>
+    </footer>
+
+    <script src="scripts/form.js"></script>
+</body>
+</html>

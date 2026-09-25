@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Confirmation</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Review Submitted Successfully!</h1>
+        <p>Thank you for sharing your feedback.</p>
+    </header>
+
+    <main>
+        <div class="confirmation-card">
+            <h2>Your Review Details</h2>
+            
+            <div class="review-details">
+                <div class="detail-item">
+                    <strong>Product:</strong>
+                    <span id="display-product"></span>
+                </div>
+                <div class="detail-item">
+                    <strong>Rating:</strong>
+                    <span id="display-rating"></span>
+                </div>
+                <div class="detail-item">
+                    <strong>Date Installed:</strong>
+                    <span id="display-date"></span>
+                </div>
+                <div class="detail-item">
+                    <strong>Useful Features:</strong>
+                    <span id="display-features"></span>
+                </div>
+                <div class="detail-item">
+                    <strong>Written Review:</strong>
+                    <p id="display-review"></p>
+                </div>
+                <div class="detail-item">
+                    <strong>Submitted by:</strong>
+                    <span id="display-username"></span>
+                </div>
+            </div>
+
+            <div class="counter-section">
+                <p>Total Reviews Submitted: <span id="review-count" class="count-number">0</span></p>
+            </div>
+
+            <a href="form.html" class="back-link">Submit Another Review</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Web Development Class &mdash; Assignment Submission</p>
+    </footer>
+
+    <script src="js/review.js"></script>
+</body>
+</html>

@@ -1,0 +1,333 @@
+/* 
+  DESIGN PRINCIPLES APPLIED:
+  - Alignment: Consistent left-alignment for labels and inputs. Uniform padding and margins.
+  - Color Contrast: High contrast text (dark gray on white). Accessible, high-visibility focus states.
+  - Proximity: Labels are placed close to their inputs. Related checkboxes are grouped tightly in a grid.
+  - Repetition: Uniform styling for all text inputs, consistent typography and spacing for labels.
+  - Usability: Large click targets, clear visual feedback on hover/focus, logical tab order.
+*/
+
+/* ===== Design Tokens (Variables) ===== */
+:root {
+    /* Color Scheme */
+    --color-bg: #F4F6F8;
+    --color-card: #FFFFFF;
+    --color-text-primary: #1F2937;
+    --color-text-secondary: #6B7280;
+    --color-accent: #4F46E5;       /* Deep Indigo */
+    --color-accent-hover: #4338CA; /* Darker Indigo */
+    --color-accent-light: #EEF2FF; /* Very light Indigo for backgrounds */
+    --color-border: #D1D5DB;
+    --color-star-empty: #D1D5DB;
+    --color-star-filled: #F59E0B;  /* Amber for stars */
+    
+    /* Typography */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    
+    /* Spacing & Shapes */
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+    --radius-md: 8px;
+    --radius-lg: 12px;
+}
+
+/* ===== Reset & Base ===== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-text-primary);
+    background-color: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ===== Header & Footer ===== */
+header {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+    color: #fff;
+    text-align: center;
+    padding: 2.5rem 1rem;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+header p {
+    margin-top: 0.5rem;
+    font-size: 1.05rem;
+    opacity: 0.9;
+}
+
+footer {
+    background-color: var(--color-text-primary);
+    color: #9CA3AF;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.875rem;
+    margin-top: auto;
+}
+
+/* ===== Main / Form Container ===== */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2.5rem 1rem 3rem;
+}
+
+form {
+    background: var(--color-card);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    max-width: 560px;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+/* ===== Form Groups (Proximity & Alignment) ===== */
+.form-group {
+    margin-bottom: 1.75rem; /* Consistent vertical rhythm */
+}
+
+/* ===== Labels (Repetition & Typography) ===== */
+label {
+    display: block;
+    margin-bottom: 0.5rem; /* Proximity: close to the input */
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: var(--color-text-primary);
+}
+
+label .optional {
+    font-weight: 400;
+    color: var(--color-text-secondary);
+    font-size: 0.8125rem;
+    margin-left: 0.25rem;
+}
+
+/* ===== Inputs, Selects, Textareas (Repetition & Usability) ===== */
+select,
+input[type="date"],
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--color-text-primary);
+    background-color: #fff;
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    appearance: none; 
+}
+
+/* Custom dropdown arrow for select */
+select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 16px;
+    padding-right: 2.5rem;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+::placeholder {
+    color: var(--color-text-secondary);
+    opacity: 0.7;
+}
+
+/* Focus states (Usability/Accessibility) */
+select:focus,
+input[type="date"]:focus,
+input[type="text"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2); /* High visibility focus ring */
+}
+
+/* ===== Fieldset & Checkboxes ===== */
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 1.75rem 0;
+}
+
+fieldset legend {
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: var(--color-text-primary);
+    margin-bottom: 0.75rem;
+    display: block;
+    width: 100%;
+}
+
+/* Proximity: Grid layout keeps related items close but organized */
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.75rem; 
+}
+
+.checkbox-item {
+    position: relative;
+}
+
+.checkbox-item input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Custom Checkbox Labels (Usability: large click targets) */
+.checkbox-item label {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 400;
+    font-size: 0.9375rem;
+    color: var(--color-text-primary);
+    cursor: pointer;
+    padding: 0.7rem 0.9rem;
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: all 0.2s ease;
+    width: 100%;
+    background: #fff;
+    margin-bottom: 0;
+}
+
+.checkbox-item label:hover {
+    border-color: var(--color-accent);
+    background-color: var(--color-accent-light);
+}
+
+/* Custom checkbox visual box */
+.checkbox-item label::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid var(--color-border);
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+/* Checked state styling */
+.checkbox-item input[type="checkbox"]:checked + label {
+    border-color: var(--color-accent);
+    background-color: var(--color-accent-light);
+    color: var(--color-accent);
+    font-weight: 500;
+}
+
+.checkbox-item input[type="checkbox"]:checked + label::before {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Keyboard focus state for checkboxes */
+.checkbox-item input[type="checkbox"]:focus + label {
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+/* ===== Star Rating ===== */
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 0.25rem;
+}
+
+.star-rating input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.star-rating label {
+    font-size: 2.25rem;
+    color: var(--color-star-empty);
+    cursor: pointer;
+    transition: color 0.15s ease, transform 0.15s ease;
+    line-height: 1;
+    margin-bottom: 0;
+}
+
+/* Hover and Focus effects */
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input:focus + label {
+    color: var(--color-star-filled);
+    transform: scale(1.1);
+}
+
+/* Selected state */
+.star-rating input:checked ~ label {
+    color: var(--color-star-filled);
+}
+
+/* ===== Submit Button ===== */
+input[type="submit"] {
+    width: 100%;
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: inherit;
+    color: #fff;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.25);
+    letter-spacing: 0.01em;
+}
+
+input[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px -1px rgba(79, 70, 229, 0.35);
+}
+
+input[type="submit"]:active {
+    transform: translateY(0);
+}
+
+input[type="submit"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.4), 0 4px 6px -1px rgba(79, 70, 229, 0.25);
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 600px) {
+    main { padding: 1rem; }
+    form { padding: 1.5rem; }
+    header h1 { font-size: 1.5rem; }
+    
+    /* Stack checkboxes on small screens */
+    .checkbox-group { grid-template-columns: 1fr; }
+}
