@@ -1,0 +1,182 @@
+/* CSS Variables for Color Schema & Typography */
+:root {
+    --bg-color: #F5F1E8;
+    --text-color: #2C3E50;
+    --primary-color: #5B8C85;
+    --accent-color: #E8A598;
+    --heading-font: 'Merriweather', serif;
+    --body-font: 'Inter', sans-serif;
+}
+
+/* Reset & Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--body-font);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Proximity & Alignment */
+header, main, footer {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1.5rem 0;
+}
+
+/* Repetition & Visual Appeal */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--primary-color);
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-family: var(--heading-font);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    color: var(--accent-color);
+}
+
+main {
+    flex: 1; /* Pushes footer down for consistent layout */
+}
+
+h1, h2 {
+    font-family: var(--heading-font);
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+/* Contrast & Usability */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px); /* Subtle 3D effect */
+}
+
+/* Room Grid */
+.room-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.room-card {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.room-card:hover {
+    transform: translateY(-5px);
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+/* Form Styling */
+.styled-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+}
+
+.styled-form label {
+    font-weight: 600;
+}
+
+.styled-form input, .styled-form textarea {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: var(--body-font);
+}
+
+.styled-form input:focus, .styled-form textarea:focus {
+    outline: 2px solid var(--primary-color);
+    border-color: transparent;
+}
+
+#form-response {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-radius: 6px;
+    display: none; /* Hidden by default */
+}
+
+/* Responsive Design (Mobile First) */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}
+
+@media (min-width: 601px) {
+    .hero {
+        text-align: center;
+        padding: 3rem 0;
+    }
+}
